@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #94a8bf;
     padding-bottom: 8px;
 
     &::placeholder {
@@ -25,11 +25,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const InputBox = () => {
+const InputBox: React.FC<any> = () => {
   return (
-      <Wrapper>
-        <input type="text" placeholder="Search Furniture"/>
-      </Wrapper>
+    <Wrapper>
+      <input type="text" placeholder="Search Furniture"/>
+    </Wrapper>
   );
 }
 
