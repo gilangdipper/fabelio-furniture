@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import Card from './ui-components/Card';
 
 const FrunitureCardsWrapper = styled.div`
-  width: 100%;
+  width: calc(100% - 2px);
   padding: 16px;
   display: flex;
   flex-flow: row wrap;
+  border: 1px solid #000000;
 
   .card-wrapper {
     flex: 0 0 calc(50% - 8px);
@@ -17,6 +18,18 @@ const FrunitureCardsWrapper = styled.div`
     }
     &:nth-child(even) {
       margin-left: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    border: none;
+
+    .card-wrapper {
+      flex: 0 0 100%;
+
+      &:nth-child(n) {
+        margin: 0 0 16px 0;
+      }
     }
   }
 `;

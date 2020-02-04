@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const CardWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  border-radius: 2px;
+  border-radius: 6px;
   width: auto;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
   padding: 16px;
@@ -19,6 +19,7 @@ const CardWrapper = styled.div`
     flex: 0 0 30%;
     color: #ff9a07;
     font-size: 14px;
+    text-align: right;
   }
   .product-description {
     flex: 0 0 100%;
@@ -64,7 +65,7 @@ const Card: FC<Props> = ({
 }) => (
   <CardWrapper>
     <div className="product-name">{name}</div>
-    <div className="product-price">{`IDR ${price}`}</div>
+    <div className="product-price">{`IDR ${parseInt(price).toLocaleString('id-ID')}`}</div>
     <div className="product-description">{description}</div>
     <div className="product-style">{furniture_style.join(', ')}</div>
     <div className="product-delivery-time">{`${delivery_time} days`}</div>

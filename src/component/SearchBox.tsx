@@ -23,6 +23,16 @@ const SearchBoxWrapper = styled.div`
         margin-left: 8px;
       }
     }
+
+    .input-box {
+      width: calc(50% - 8px);
+    }
+
+    @media only screen and (max-width: 425px) {
+      .input-box {
+        width: 100%;
+      }
+    }
   }
 `;
 

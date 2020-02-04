@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  width: 50%;
+  width: 100%;
   background-color: #0f6cc8;
 
   input {
@@ -32,7 +32,7 @@ type Props = {
 };
 
 const InputBox: FC<Props> = ({ placeholder, value, onChange }) => (
-  <Wrapper>
+  <Wrapper className="input-box">
     <input
       type="text"
       placeholder={placeholder}

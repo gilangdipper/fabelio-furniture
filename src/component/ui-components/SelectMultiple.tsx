@@ -48,9 +48,11 @@ const MultipleSelectWrapper = styled.div`
         display: flex;
         font-weight: 500;
         font-size: 12px;
+        cursor: pointer;
 
         input {
           margin-left: auto;
+          cursor: pointer;
         }
       }
     }
@@ -62,7 +64,7 @@ type Props = {
   options: object[],
   checked: object,
   placeholder: string
-}
+};
 
 const SelectMultiple: FC<Props> = ({ options, placeholder, checked, onChange }) => {
   const wrapperRef = useRef(null);
