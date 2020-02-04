@@ -10,11 +10,16 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const SearchPage = () => {
+type Props = {
+  products: Object[],
+  furnitureStyles: string[]
+}
+
+const SearchPage: React.FC<Props> = ({ products, furnitureStyles }) => {
   return (
     <Wrapper>
-      <SearchBox />
-      <FurnitureCards />
+      <SearchBox furnitureStyles={furnitureStyles} />
+      <FurnitureCards products={products} />
     </Wrapper>
   );
 }
