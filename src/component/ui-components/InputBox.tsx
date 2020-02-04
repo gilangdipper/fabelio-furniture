@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -25,12 +25,21 @@ const Wrapper = styled.div`
   }
 `;
 
-const InputBox: React.FC<any> = () => {
-  return (
-    <Wrapper>
-      <input type="text" placeholder="Search Furniture"/>
-    </Wrapper>
-  );
-}
+type Props = {
+  placeholder: string,
+  value: string,
+  onChange: () => void
+};
+
+const InputBox: FC<Props> = ({ placeholder, value, onChange }) => (
+  <Wrapper>
+    <input
+      type="text"
+      placeholder={placeholder}
+      onChange={onChange}
+      value={value}
+    />
+  </Wrapper>
+);
 
 export default InputBox;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Card from './ui-components/Card';
 
@@ -25,15 +25,13 @@ type Props = {
   products: Object[]
 };
 
-const FrunitureCards: React.FC<Props> = ({ products }) => {
-  return (
-    <FrunitureCardsWrapper>
-      {products.map((product, index) =>
-        <div className="card-wrapper" key={index}>
-          <Card {...product} />
-        </div>)}
-    </FrunitureCardsWrapper>
-  );
-}
+const FrunitureCards: FC<Props> = ({ products }) => (
+  <FrunitureCardsWrapper>
+    {products.map((product, index) =>
+      <div className="card-wrapper" key={index}>
+        <Card {...product} />
+      </div>)}
+  </FrunitureCardsWrapper>
+);
 
 export default FrunitureCards;

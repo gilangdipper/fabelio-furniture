@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { FC, useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Checkbox from './Checkbox';
 
@@ -47,6 +47,7 @@ const MultipleSelectWrapper = styled.div`
         padding: 8px;
         display: flex;
         font-weight: 500;
+        font-size: 12px;
 
         input {
           margin-left: auto;
@@ -56,33 +57,16 @@ const MultipleSelectWrapper = styled.div`
   }
 `;
 
-const checkboxes = [
-  {
-    name: 'check-box-1',
-    key: 'checkBox1',
-    label: 'Check Box 1',
-  },
-  {
-    name: 'check-box-2',
-    key: 'checkBox2',
-    label: 'Check Box 2',
-  },
-  {
-    name: 'check-box-3',
-    key: 'checkBox3',
-    label: 'Check Box 3',
-  },
-  {
-    name: 'check-box-4',
-    key: 'checkBox4',
-    label: 'Check Box 4',
-  },
-];
+type Props = {
+  onChange: () => void,
+  options: object[],
+  checked: object,
+  placeholder: string
+}
 
-const SelectMultiple: React.SFC<any> = () => {
+const SelectMultiple: FC<Props> = ({ options, placeholder, checked, onChange }) => {
   const wrapperRef = useRef(null);
   const [optionsVisible, setOptionsVisible] = useState(false);
-  const [optionsChecked, setOptionsChecked] = useState({});
   const handleClickOutside = (event) => {
     if (wrapperRef && !wrapperRef.current.contains(event.target)) {
       setOptionsVisible(false);
@@ -94,12 +78,6 @@ const SelectMultiple: React.SFC<any> = () => {
     document.addEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleChange = (e) => {
-    const item = e.target.name;
-    const isChecked = e.target.checked;
-    setOptionsChecked(prevState => ({ ...prevState, [item]: isChecked }));
-  }
-
   return (
     <MultipleSelectWrapper
       optionsVisible={optionsVisible}
@@ -107,16 +85,16 @@ const SelectMultiple: React.SFC<any> = () => {
       ref={wrapperRef}
       className="multiple-select-wrapper"
     >
-      <div className="placeholder">Delivery Time</div>
+      <div className="placeholder">{placeholder}</div>
       <div className="options-wrapper">
         <div className="options">
-          {checkboxes.map(item => 
-            <label key={item.key}>
+          {options.map((item, index) => 
+            <label key={index}>
               {item.name}
               <Checkbox
                 name={item.name}
-                checked={optionsChecked[item.name]}
-                onChange={handleChange}
+                checked={checked[item.name]}
+                onChange={onChange}
               />
             </label>)}
         </div>

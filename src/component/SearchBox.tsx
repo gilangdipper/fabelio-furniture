@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import InputBox from './ui-components/InputBox';
 import SelectMultiple from './ui-components/SelectMultiple';
@@ -26,15 +26,86 @@ const SearchBoxWrapper = styled.div`
   }
 `;
 
-const SearchBox: React.FC<any> = () => {
+const FILTERS = [ "furnitureStyle", "deliveryTime" ];
+const defaultSelectOptions = {
+  deliveryTime: [
+    {
+      name: 'one-week',
+      label: '1 Week',
+    },
+    {
+      name: 'two-weeks',
+      label: '2 Weeks',
+    },
+    {
+      name: 'one-month',
+      label: '1 Month',
+    },
+    {
+      name: 'more',
+      label: 'More',
+    }
+  ]
+};
+const FILTER_NAME_MAP = {
+  furnitureStyle: "Furniture Style",
+  deliveryTime: "Delivery Time"
+};
+
+type Props = {
+  furnitureStyles: string[],
+  filters: object,
+  setFilters: () => void
+}
+
+const SearchBox: FC<Props> = ({ furnitureStyles, filters, setFilters }) => {
+  const selectOptions = {
+    ...defaultSelectOptions,
+    ...(furnitureStyles !== undefined && {
+      furnitureStyle: furnitureStyles.map(item => ({ name: item, label: item }))
+    })
+  };
+
+  const handleInputChange = e => {
+    const inputText = e.target.value
+    setFilters(prevState => ({ ...prevState, search: inputText }));
+  };
+
+  const renderMultipleSelect = (filterName, index) => {
+    const handleSelectChange = (e) => {
+      const item = e.target.name;
+      const isChecked = e.target.checked;
+      setFilters(prevState => ({
+        ...prevState,
+        [filterName]: {
+          ...prevState[filterName],
+          [item]: isChecked
+        }
+      }));
+    };
+
+    return (
+      <SelectMultiple
+        key={index}
+        placeholder={FILTER_NAME_MAP[filterName]}
+        options={selectOptions[filterName]}
+        onChange={handleSelectChange}
+        checked={filters[filterName]}
+      />
+    );
+  };
+
   return (
     <SearchBoxWrapper>
       <div className="row">
-        <InputBox />
+        <InputBox
+          placeholder="Search Furniture"
+          value={filters.search}
+          onChange={handleInputChange}
+        />
       </div>
       <div className="row">
-        <SelectMultiple />
-        <SelectMultiple />
+        {FILTERS.map(renderMultipleSelect)}
       </div>
     </SearchBoxWrapper>
   );

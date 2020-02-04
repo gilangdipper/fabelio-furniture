@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const CardWrapper = styled.div`
@@ -55,16 +55,20 @@ type Props = {
   delivery_time: string
 };
 
-const Card: React.FC<Props> = ({ name, price, description, furniture_style, delivery_time }) => {
-  return (
-    <CardWrapper>
-      <div className="product-name">{name}</div>
-      <div className="product-price">{`IDR ${price}`}</div>
-      <div className="product-description">{description}</div>
-      <div className="product-style">{furniture_style.join(', ')}</div>
-      <div className="product-delivery-time">{`${delivery_time} days`}</div>
-    </CardWrapper>
-  );
-};
+const Card: FC<Props> = ({ 
+  name,
+  price,
+  description,
+  furniture_style,
+  delivery_time
+}) => (
+  <CardWrapper>
+    <div className="product-name">{name}</div>
+    <div className="product-price">{`IDR ${price}`}</div>
+    <div className="product-description">{description}</div>
+    <div className="product-style">{furniture_style.join(', ')}</div>
+    <div className="product-delivery-time">{`${delivery_time} days`}</div>
+  </CardWrapper>
+);
 
 export default Card;
