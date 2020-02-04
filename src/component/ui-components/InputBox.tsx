@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     &::placeholder {
       color: #ffffff;
     }
-
+    
     &:focus {
       outline: none;
     }

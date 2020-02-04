@@ -17,10 +17,10 @@ const SearchBoxWrapper = styled.div`
 
     .multiple-select-wrapper {
       &:first-child {
-        margin-right: 6px;
+        margin-right: 8px;
       }
       &:last-child {
-        margin-left: 6px;
+        margin-left: 8px;
       }
     }
   }

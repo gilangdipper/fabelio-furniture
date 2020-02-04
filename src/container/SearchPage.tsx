@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SearchBox from '../component/SearchBox';
+import FurnitureCards from '../component/FurnitureCards';
 
 const Wrapper = styled.div`
   display: block;
@@ -11,9 +12,10 @@ const Wrapper = styled.div`
 
 const SearchPage = () => {
   return (
-      <Wrapper>
-        <SearchBox />
-      </Wrapper>
+    <Wrapper>
+      <SearchBox />
+      <FurnitureCards />
+    </Wrapper>
   );
 }
 
