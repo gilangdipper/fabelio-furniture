@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fabelio-furniture/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/fabelio-furniture/static/js/main.ccc8f8fe.chunk.js",
-    "main.js.map": "/fabelio-furniture/static/js/main.ccc8f8fe.chunk.js.map",
+    "main.js": "/fabelio-furniture/static/js/main.8608b4af.chunk.js",
+    "main.js.map": "/fabelio-furniture/static/js/main.8608b4af.chunk.js.map",
     "runtime-main.js": "/fabelio-furniture/static/js/runtime-main.2d22d643.js",
     "runtime-main.js.map": "/fabelio-furniture/static/js/runtime-main.2d22d643.js.map",
     "static/js/2.d850dd4d.chunk.js": "/fabelio-furniture/static/js/2.d850dd4d.chunk.js",
     "static/js/2.d850dd4d.chunk.js.map": "/fabelio-furniture/static/js/2.d850dd4d.chunk.js.map",
     "index.html": "/fabelio-furniture/index.html",
-    "precache-manifest.e4ba51ce769faa5de8cf33a29a5e55e5.js": "/fabelio-furniture/precache-manifest.e4ba51ce769faa5de8cf33a29a5e55e5.js",
+    "precache-manifest.4952200cdc9d6350d24440a2b1f6464e.js": "/fabelio-furniture/precache-manifest.4952200cdc9d6350d24440a2b1f6464e.js",
     "service-worker.js": "/fabelio-furniture/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/fabelio-furniture/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.d850dd4d.chunk.js.LICENSE.txt": "/fabelio-furniture/static/js/2.d850dd4d.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2d22d643.js",
     "static/js/2.d850dd4d.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.ccc8f8fe.chunk.js"
+    "static/js/main.8608b4af.chunk.js"
   ]
 }

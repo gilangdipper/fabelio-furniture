@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41cb9e090bba773a4d3700d963e2d3e6",
+    "revision": "d013960c878a5d781b8aa06abbb3187c",
     "url": "/fabelio-furniture/index.html"
   },
   {
-    "revision": "225b8b8e0516887e1954",
+    "revision": "99ee945497c3456d1cf6",
     "url": "/fabelio-furniture/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fabelio-furniture/static/js/2.d850dd4d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "225b8b8e0516887e1954",
-    "url": "/fabelio-furniture/static/js/main.ccc8f8fe.chunk.js"
+    "revision": "99ee945497c3456d1cf6",
+    "url": "/fabelio-furniture/static/js/main.8608b4af.chunk.js"
   },
   {
     "revision": "7725a80e93c0c490399a",
