@@ -9,7 +9,7 @@ const App: FC<any> = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          'http://www.mocky.io/v2/5c9105cb330000112b649af8,'
+          'https://www.mocky.io/v2/5c9105cb330000112b649af8,'
         );
         const result = await response.json();
 
