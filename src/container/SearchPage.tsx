@@ -60,15 +60,31 @@ const defaultFilters = {
   deliveryTime: {}
 };
 
-type Props = {
-  products: Object[],
-  furnitureStyles: string[]
-};
-
-const SearchPage: FC<Props> = ({ products, furnitureStyles }) => {
+const SearchPage: FC<any> = () => {
   const [filters, setFilters] = useState(defaultFilters);
+  const [products, setProducts] = useState([]);
+  const [furnitureStyles, setFurnitureStyles] = useState([]);
   const prevFiltersState = usePrevious(filters);
-  const productsFiltered = getProductsFiltered(filters, prevFiltersState, products);  
+  const productsFiltered = getProductsFiltered(filters, prevFiltersState, products);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          'https://www.mocky.io/v2/5c9105cb330000112b649af8,'
+        );
+        const result = await response.json();
+
+        setProducts(result.products);
+        setFurnitureStyles(result.furniture_styles);
+      } catch(error) {
+        setProducts([]);
+        setFurnitureStyles([]);
+      }
+    };
+
+    fetchData();
+  }, []);
   
   return (
     <Wrapper>
