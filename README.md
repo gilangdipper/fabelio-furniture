@@ -8,3 +8,10 @@
 3.) npm start
 
 ```
+
+### Login page
+``` bash
+UI -> ready
+Func -> not completed yet
+
+```
